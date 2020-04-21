@@ -1,0 +1,8 @@
+{
+  "unauthorized": "Unauthorized access.",
+  "file.upload": "There was an error uploading the file.",
+  "email.not.found": "E-mail not found.",
+  "expired.token": "The recovery token is expired.",
+  "bad.data": "Something went wrong, please verify your data.",
+  "project.not.found": "Project not found."
+}
