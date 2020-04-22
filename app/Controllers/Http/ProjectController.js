@@ -98,7 +98,7 @@ class ProjectController {
 
       project.merge(data)
 
-      project.save()
+      await project.save()
 
       return project
     } catch (error) {
@@ -126,7 +126,7 @@ class ProjectController {
         })
       }
 
-      project.delete()
+      await project.delete()
     } catch (error) {
       return response.status(error.status).send({
         error: antl.formatMessage('messages.project.not.found'),
