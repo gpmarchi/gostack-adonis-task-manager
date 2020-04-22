@@ -6,5 +6,6 @@
   "bad.data": "Ocorreu algo errado com sua requisição, por favor verifique seus dados.",
   "project.not.found": "Projeto não encontrado.",
 
-  "permission.not.found": "Permissão não encontrada."
+  "permission.not.found": "Permissão não encontrada.",
+  "role.not.found": "Papel não encontrado."
 }
