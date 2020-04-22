@@ -4,7 +4,6 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
-/** @type {typeof import('../../Models/Permission')} */
 const Permission = use('Permission')
 
 /**
