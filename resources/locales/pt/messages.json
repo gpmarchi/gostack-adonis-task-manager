@@ -4,5 +4,7 @@
   "email.not.found": "E-mail não encontrado.",
   "expired.token": "O token de recuperação expirou.",
   "bad.data": "Ocorreu algo errado com sua requisição, por favor verifique seus dados.",
-  "project.not.found": "Projeto não encontrado."
+  "project.not.found": "Projeto não encontrado.",
+
+  "permission.not.found": "Permissão não encontrada."
 }
