@@ -55,24 +55,29 @@ class ProjectController {
    *
    */
   async show({ params, response, auth, antl }) {
-    try {
-      const project = await Project.findOrFail(params.id)
+    const project = await Project.find(params.id)
 
-      if (project.user_id !== auth.user.id) {
-        return response.status(403).send({
-          error: antl.formatMessage('messages.unauthorized'),
-        })
-      }
-
-      await project.load('user')
-      await project.load('tasks')
-
-      return project
-    } catch (error) {
-      return response.status(error.status).send({
+    if (!project) {
+      return response.status(404).send({
         error: antl.formatMessage('messages.project.not.found'),
       })
     }
+
+    const user = await auth.getUser()
+
+    if (
+      project.user_id !== user.id &&
+      !(await user.can('read_other_manager_projects'))
+    ) {
+      return response.status(403).send({
+        error: antl.formatMessage('messages.unauthorized'),
+      })
+    }
+
+    await project.load('user')
+    await project.load('tasks')
+
+    return project
   }
 
   /**
