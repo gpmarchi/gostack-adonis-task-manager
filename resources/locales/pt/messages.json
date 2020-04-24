@@ -5,6 +5,7 @@
   "expired.token": "O token de recuperação expirou.",
   "bad.data": "Ocorreu algo errado com sua requisição, por favor verifique seus dados.",
   "project.not.found": "Projeto não encontrado.",
+  "user.not.found": "User not found",
 
   "permission.not.found": "Permissão não encontrada.",
   "role.not.found": "Papel não encontrado."
