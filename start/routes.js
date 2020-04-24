@@ -24,7 +24,15 @@ Route.group(() => {
 
   Route.resource('projects', 'ProjectController')
     .apiOnly()
+    .except(['index', 'show'])
     .validator(new Map([[['projects.store'], ['Project']]]))
+    .middleware('is:(administrator || manager)')
+  Route.get('/projects', 'ProjectController.index').middleware(
+    'can:read_projects'
+  )
+  Route.get('/projects/:id', 'ProjectController.show').middleware(
+    'can:read_projects'
+  )
 
   Route.resource('projects.tasks', 'TaskController')
     .apiOnly()
